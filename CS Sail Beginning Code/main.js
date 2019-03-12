@@ -6,7 +6,8 @@ var ball = {
   y : 0,
   xSpeed : 3,
   ySpeed : 1,
-  radius : 10
+  radius : 10,
+  paddleReflection: 4
 }
 
 var paddle1 = {
@@ -64,8 +65,7 @@ function bounceBall(){
   if (ball.x - (ball.radius / 2) <= 0){
     if(paddle1.y - ball.radius < ball.y && paddle1.y + paddle1.height + ball.radius > ball.y){
       ball.xSpeed *= -1;
-      ball.ySpeed = ((paddle1.y + (paddle1.height / 2)) - ball.y) / (paddle1.height / 2) * 4;
-      console.log(ball.ySpeed);
+      ball.ySpeed = -((paddle1.y + (paddle1.height / 2)) - ball.y) / (paddle1.height / 2) * ball.paddleReflection;
     }
     else{
       resetBall();
@@ -75,8 +75,7 @@ function bounceBall(){
   if (ball.x + (ball.radius / 2) >= canvas.width) {
     if(paddle2.y - ball.radius < ball.y && paddle2.y + paddle2.height + ball.radius > ball.y){
       ball.xSpeed *= -1;
-      ball.ySpeed = ((paddle2.y + (paddle2.height / 2)) - ball.y) / (paddle2.height / 2) * 4;
-      console.log(ball.ySpeed);
+      ball.ySpeed = -((paddle2.y + (paddle2.height / 2)) - ball.y) / (paddle2.height / 2) * ball.paddleReflection;
     }
     else{
       resetBall();
