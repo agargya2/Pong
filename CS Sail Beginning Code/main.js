@@ -2,12 +2,13 @@ var canvas;
 var canvasContext;
 
 var ball = {
-	x : 0,
-	y : 0,
-	xSpeed : 3,
+	x : 70,
+	y : 100,
+	xSpeed : 1,
 	ySpeed : 1,
 	radius : 10,
-	maxSpeed: 4,
+	maxSpeed : 4,
+	minSpeed : 2,
 	color : "red"
 }
 
@@ -52,13 +53,13 @@ function drawText(coordinateX, coordinateY, size, color, font, text){
 }
 
 function initializeGame(){
-	//TODO: Put the ball in the middle of the screen
+	//TODO (5): Put the ball in the middle of the screen
 
-	//TODO: Put Paddle2 on the right side of the screen
+	//TODO (6): Put Paddle2 on the right side of the screen
 }
 
 function moveBall(){
-	//TODO: Move the ball
+	//TODO (1): Move the ball
 
 }
 
@@ -66,22 +67,22 @@ function bounceBall(){
 	//TODO: When the ball hits the left or right side, check to see whether the corresponding paddle is hitting the ball
 	//TODO: If the ball does hit the paddle, make it bounce, or else reset the ball and increase the correct player's score
 
-	//TODO: If the ball hits the the top or bottom of the screen, make it bounce
+	//TODO (2): If the ball hits the the top or bottom of the screen, make it bounce
 }
 
 function resetBall(){
-	//TODO: Put the ball in the center of the screen
+	//TODO (7): Put the ball in the center of the screen
 
-	//TODO: Randomize the ball's speed
+	//TODO (8): Randomize the ball's speed
 }
 
 function movePaddle2(){
-	//TODO: Move Paddle2
+	//TODO (9): Move Paddle2
 }
 
 function mouseToPaddle(evt){
-	//TODO: Get the x and y coordinates of the mouse using the helper function
-	//TODO: Change paddle1's position to the center of the mouse
+	//TODO (3): Get the x and y coordinates of the mouse using the helper function
+	//TODO (4): Change paddle1's position to the center of the mouse
 }
 
 function getMouseLocation(evt){
