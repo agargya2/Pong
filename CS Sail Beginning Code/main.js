@@ -2,8 +2,8 @@ var canvas;
 var canvasContext;
 
 var ball = {
-	x : 0,
-	y : 0,
+	x : 30,
+	y : 30,
 	xSpeed : 3,
 	ySpeed : 1,
 	radius : 10,
@@ -126,7 +126,7 @@ function update(){
 	//TODO: Freeze the game when needed
 	move();
 	draw();
-}
+}s
 
 window.onload = function(){
 	canvas = document.getElementById("gameCanvas");
