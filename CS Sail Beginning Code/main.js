@@ -2,12 +2,13 @@ var canvas;
 var canvasContext;
 
 var ball = {
-	x : 30,
-	y : 30,
+	x : 0,
+	y : 0,
 	xSpeed : 3,
 	ySpeed : 1,
 	radius : 10,
-	paddleReflection: 4
+	maxSpeed: 4,
+	color : "red"
 }
 
 var paddle1 = {
@@ -16,7 +17,8 @@ var paddle1 = {
  	height : 100,
  	width : 10,
  	score : 0,
- 	name : "Player"
+ 	name : "Player",
+	color : "white"
 }
 
 var paddle2 = {
@@ -26,7 +28,8 @@ var paddle2 = {
 	width: 10,
 	speed : 3,
 	score : 0,
-	name : "Computer"
+	name : "Computer",
+	color : "white"
 }
 
 function drawRectangle(coordinateX, coordinateY, width, height, color){
@@ -51,7 +54,7 @@ function drawText(coordinateX, coordinateY, size, color, font, text){
 function initializeGame(){
 	//TODO: Put the ball in the middle of the screen
 
-	//TODO: Put Paddle2 on the right side in the center
+	//TODO: Put Paddle2 on the right side of the screen
 }
 
 function moveBall(){
@@ -78,7 +81,7 @@ function movePaddle2(){
 
 function mouseToPaddle(evt){
 	//TODO: Get the x and y coordinates of the mouse using the helper function
-	//TODO: Change paddle2's position to the center of the mouse
+	//TODO: Change paddle1's position to the center of the mouse
 }
 
 function getMouseLocation(evt){
@@ -98,13 +101,13 @@ function draw(){
 	drawRectangle(0, 0, canvas.width, canvas.height, "black");
 
 	//paddle1
-	drawRectangle(paddle1.x, paddle1.y, paddle1.width, paddle1.height, "white");
+	drawRectangle(paddle1.x, paddle1.y, paddle1.width, paddle1.height, paddle1.color);
 
 	//paddle2
-	drawRectangle(paddle2.x, paddle2.y, paddle2.width, paddle2.height, "white");
+	drawRectangle(paddle2.x, paddle2.y, paddle2.width, paddle2.height, paddle2.color);
 
 	//ball
-	drawCircle(ball.x, ball.y, ball.radius, "red");
+	drawCircle(ball.x, ball.y, ball.radius, ball.color);
 
 	//scores
 	drawText(canvas.width / 4, canvas.height / 4, "30px", "white", "Arial", paddle1.score);
@@ -126,7 +129,7 @@ function update(){
 	//TODO: Freeze the game when needed
 	move();
 	draw();
-}s
+}
 
 window.onload = function(){
 	canvas = document.getElementById("gameCanvas");
